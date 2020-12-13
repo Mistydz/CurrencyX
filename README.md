@@ -5,6 +5,8 @@ this website is still under construction , a live currency and foreign exchange 
 ### *Demo*
 For now there is only a pc version for the website you can visit it [Here](https://mistydev.cf/CurrencyXchange)
 
+![demo](https://raw.githubusercontent.com/Mistydz/CurrencyXchange/main/demo.PNG)
+
 ### *Technologies & Tools*
 > Html/CSS/Javascript
 ##### *API's Used*
