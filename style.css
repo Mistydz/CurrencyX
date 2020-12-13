@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@media (min-width:100px) and (max-width: 1024px) {
+    body {
+        background-image: url("phone.jpg");
+        background-size: 400%;
+        font-family: "Raleway", sans-serif;
+        color: aliceblue;
+        padding: 50px;
+    }
+    .pc {
+        display: none;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1600px) {
+    body {
+        background-color: rgb(46, 46, 46);
+        margin: 0;
+        padding: 0;
+    }
+    #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    .content {
+        position: fixed;
+        display: flex;
+        top: 0;
+        background: rgba(0, 0, 0, 0.74);
+        color: #f1f1f1;
+        width: 100%;
+        padding: 0 50px;
+    }
+    .logo {
+        font-family: 'Cinzel Decorative', cursive;
+        font-size: 30px;
+    }
+    .links {
+        display: flex;
+        position: fixed;
+        right: 0;
+        padding: 15px 10px;
+    }
+    .linkss {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-decoration: none;
+        font-size: 25px;
+        color: aliceblue;
+        margin-right: 15px;
+        background-color: rgb(0, 0, 0);
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .linkss:hover {
+        background-color: rgb(56, 56, 56);
+        border: 1px solid rgb(176, 246, 246);
+    }
+    .container {
+        position: fixed;
+        width: 90%;
+        height: 500px;
+        margin: 0px;
+        top: 250px;
+    }
+    .container2 {
+        display: flex;
+        margin: 10px 10px 10px 50px;
+    }
+    h1 {
+        font-size: 20px;
+        font-family: 'Poppins', sans-serif;
+    }
+    #amount_one {
+        height: 60px;
+        width: 250px;
+        font-size: 30px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid black;
+        font-family: 'Poppins', sans-serif;
+        outline: none;
+    }
+    #currency_one {
+        height: 62px;
+        width: 300px;
+        font-size: 20px;
+        border-radius: 10px;
+        font-family: 'Poppins', sans-serif;
+        outline: none;
+    }
+    #swap {
+        background: url(swap.png);
+        width: 80px;
+        height: 60px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        border: 0px;
+        outline: none;
+    }
+    #currency_two {
+        height: 62px;
+        width: 300px;
+        font-size: 20px;
+        border-radius: 10px;
+        font-family: 'Poppins', sans-serif;
+        outline: none;
+    }
+    .sp {
+        margin-left: 30px;
+    }
+    .rateBox {
+        font-size: 90px;
+        font-family: 'Poppins', sans-serif;
+    }
+    .sw {
+        display: flex;
+        margin-left: 400px;
+    }
+    .rateId {
+        margin-left: 20px;
+        font-size: 90px;
+        font-family: 'Poppins', sans-serif;
+    }
+    .phone {
+        display: none;
+    }
+}
+
+@media (min-width: 1600px) {
+    body {
+        background-color: rgb(46, 46, 46);
+        margin: 0;
+        padding: 0;
+    }
+    #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    .content {
+        position: fixed;
+        display: flex;
+        top: 0;
+        background: rgba(0, 0, 0, 0.74);
+        color: #f1f1f1;
+        width: 100%;
+        padding: 0 50px;
+    }
+    .logo {
+        font-family: 'Cinzel Decorative', cursive;
+        font-size: 30px;
+    }
+    .links {
+        display: flex;
+        position: fixed;
+        right: 0;
+        padding: 15px 10px;
+    }
+    .linkss {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-decoration: none;
+        font-size: 25px;
+        color: aliceblue;
+        margin-right: 15px;
+        background-color: rgb(0, 0, 0);
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .linkss:hover {
+        background-color: rgb(56, 56, 56);
+        border: 1px solid rgb(176, 246, 246);
+    }
+    .container {
+        position: fixed;
+        width: 90%;
+        height: 500px;
+        margin: 100px;
+        top: 250px;
+    }
+    .container2 {
+        display: flex;
+        margin: 10px 10px 10px 300px;
+    }
+    h1 {
+        font-size: 20px;
+        font-family: 'Poppins', sans-serif;
+    }
+    #amount_one {
+        height: 60px;
+        width: 250px;
+        font-size: 30px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid black;
+        font-family: 'Poppins', sans-serif;
+        outline: none;
+    }
+    #currency_one {
+        height: 62px;
+        width: 300px;
+        font-size: 20px;
+        border-radius: 10px;
+        font-family: 'Poppins', sans-serif;
+        outline: none;
+    }
+    #swap {
+        background: url(swap.png);
+        width: 80px;
+        height: 60px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        border: 0px;
+        outline: none;
+    }
+    #currency_two {
+        height: 62px;
+        width: 300px;
+        font-size: 20px;
+        border-radius: 10px;
+        font-family: 'Poppins', sans-serif;
+        outline: none;
+    }
+    .sp {
+        margin-left: 30px;
+    }
+    .rateBox {
+        font-size: 90px;
+        font-family: 'Poppins', sans-serif;
+    }
+    .sw {
+        display: flex;
+        margin-left: 650px;
+    }
+    .rateId {
+        margin-left: 20px;
+        font-size: 90px;
+        font-family: 'Poppins', sans-serif;
+    }
+    .phone {
+        display: none;
+    }
+}
