@@ -1,19 +1,24 @@
 # JetZ
 
- :money_with_wings: this website is still under construction , a live currency and foreign exchange rates it was based on the yahoo exchange rate api but i changed to another free api so i dont have to use a key (limited call per month) and since i m not using a key to call the api i dont need the nodeJS part i made the call in vanilla javascript directly from the user to api.
+ :money_with_wings: this website is a side project , you can use any part of the code if you want to , its a webscraper that get exchange rates and crypto prices and display them for the end user while giving the admin a table that has some rates value that could be updated.
 
-this project will be changed soon 
+
 
 
 ### *Demo*
-For now there is only a pc version for the website you can visit it [Here](https://mistydev.cf/CurrencyXchange)
+You can visit the live demo of the website [Here](https://jet-z.herokuapp.com/)
 
-![demo](https://raw.githubusercontent.com/Mistydz/CurrencyXchange/main/demo.PNG)
+![demo](https://raw.githubusercontent.com/Mistydz/Jetz/main/demo.PNG)
 
 ### *Technologies & Tools*
-> Html/CSS/Javascript
+> Html/CSS/Javascript<br />
+> ReactJs/Bootstrap<br />
+> NodeJs/Express/MongoDB<br />
 ##### *API's Used*
->Exchange Rate API [Documentation](https://api.exchangerate-api.com/v4/latest/EUR)
+>JetZ Database updated by Admin (for BlackMarket Rates) [Website](https://jet-z.herokuapp.com/)<br />
+>fx-Rate (for dzd official price)--scraped [Website](https://fx-rate.net/DZD/)<br />
+>x-Rates (for usd official price)--scraped [Website](https://www.x-rates.com/table/?from=USD&amount=1)<br />
+>Coin Market Cap (for crypto currency price)--scraped [Website](https://coinmarketcap.com/)<br />
 
 
 Change this to have backend
