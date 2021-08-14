@@ -1,6 +1,6 @@
 # JetZ
 
- :money_with_wings: this website is a side project , you can use any part of the code if you want to , its a webscraper that get exchange rates and crypto prices and display them for the end user while giving the admin a table that has some rates value that could be updated. if you have any questions or any suggestions you can contact me on email or on my twitter. thank you.
+ :money_with_wings: this website is a side project , you can use any part of the code if you want to , its a webscraper that get exchange rates and crypto prices and display them for the end user while giving the admin a table that has some rates value that could be updated. if you have any questions or any suggestions you can contact me on email or on my twitter. 
 
 
 
