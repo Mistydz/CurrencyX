@@ -1,0 +1,89 @@
+#theme-options-wrapper{
+	display: flex;
+	justify-content: center;
+}
+
+.theme-dot{
+	height: 30px;
+	width: 30px;
+	background-color: black;
+	border-radius: 50%;
+
+	margin: 5px;
+	border:2px solid var(--themeDotBorder);
+
+	-webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+
+	cursor: pointer;
+}
+
+
+.theme-dot:hover{
+	border-width: 5px;
+}
+
+
+#light-mode{
+	background-color: #fff;
+}
+
+#blue-mode{
+	background-color: #18222b;
+}
+
+#green-mode{
+	background-color: #686868;
+}
+
+#purple-mode{
+	background-color: #842591;
+}
+
+#settings-note{
+	font-size: 12px;
+	font-style: italic;
+	text-align: center;
+}
+
+/* Animation */
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,60px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,60px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+.animated {
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
