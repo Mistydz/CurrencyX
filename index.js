@@ -105,6 +105,7 @@ async function getPrice() {
 
         const $ = cheerio.load(data)
         const elemSelector ='.h7vnx2-2 > tbody:nth-child(3) > tr'
+        
 
         const keys = [
             'rank',
@@ -117,37 +118,64 @@ async function getPrice() {
             'circulatingSupply'
         ]
 
+        const imgs = [
+            'src'
+        ]
+
+
         const coinArr = []
+        const srcArr = []
+
 
 
         $(elemSelector).each((parentIdx,parentElm) =>{
             let keyIdx = 0 
+            let srcIdx = 0
             const coinObj = {}
+            const srcObj = {}
+
+
 
             if (parentIdx <10) {
             $(parentElm).children().each((childIdx, childElm) => {
                 let tdValue = $(childElm).text()
+                let tsValue = $(childElm).attr('src')
+                
 
                 if (keyIdx ===1 || keyIdx ===6) {
                     tdValue = $('p:first-child', $(childElm).html()).text()
+                    tsValue = $('img', $(childElm).html()).attr('src')   
+                    if(tsValue) {
+                        srcObj[imgs[srcIdx]] = tsValue
+                        srcIdx++
+                    }
                 }
                 if (keyIdx ===5) {
                     tdValue = $('span:last-child', $(childElm).html()).text()
                 }
+
                 
                 if(tdValue) {
                     coinObj[keys[keyIdx]] = tdValue
-
                     keyIdx++
                 }
+
+   
             })
             coinArr.push(coinObj)
+            srcArr.push(srcObj)
         }
         })
-        return coinArr
+
+
+        
+
+        return {coinArr,srcArr}
     }catch(err){
         console.error(err)
     }
+ 
+    
 }
 
 
