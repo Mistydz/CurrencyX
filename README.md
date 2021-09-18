@@ -23,7 +23,7 @@ You can visit the live demo of the website [Here](https://jet-z.herokuapp.com/)
 i used [bootswatch](https://www.bootstrapcdn.com/bootswatch/) since i had all my website on bootstrap to not waste time on make in it responsive and having to add the dark mode to it. so i added link.setAttribute to change the theme without having to change anything on the css (i know its a getto way of doing this but it saves big time)
 
 ### *Contact me*
-> :e-mail: Email : ds.misty13@gmail.com <br />
+> :e-mail: Email : mistyUX@gmail.com <br />
 > :information_source: Twitter : [MohamedMisty](https://twitter.com/MohamedMisty)
 
 
