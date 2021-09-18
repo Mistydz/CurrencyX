@@ -24,7 +24,7 @@ require("./routes/passportConfig")(passport);
 
 
 
-const uri = "mongodb+srv://dbuser:zxNi3bDVbjAVxy8y@wavedb.uej6u.mongodb.net/Database?retryWrites=true&w=majority";
+const uri = "mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@wavedb.uej6u.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority";
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
