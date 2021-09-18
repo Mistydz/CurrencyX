@@ -12,7 +12,7 @@ function Crypto() {
 
     useEffect(() => {
       async function fetchData()  {
-        Axios.get(`http://localhost:5000/api/crypto?api_key=${process.env.REACT_APP_API_KEY}`).then(response => {
+        Axios.get(`/api/crypto?api_key=${process.env.REACT_APP_API_KEY}`).then(response => {
             setDbList(response.data);
             setFetching(false);
             setTimeout(fetchData, 4000); // Change the numeric value for the frequency you want to call the api and update your price value with 
@@ -24,7 +24,7 @@ function Crypto() {
 
     useEffect(() => {
       async function fetchClass()  {
-        Axios.get(`http://localhost:5000/api/cryptoups?api_key=${process.env.REACT_APP_API_KEY}`).then(response => {
+        Axios.get(`/api/cryptoups?api_key=${process.env.REACT_APP_API_KEY}`).then(response => {
           setClassList(response.data.data);
             setFetchingc(false);
             setTimeout(fetchClass, 4000); // Change the numeric value for the frequency you want to call the api and update your price value with 
