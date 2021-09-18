@@ -12,7 +12,7 @@ function Crypto() {
 
     useEffect(() => {
       async function fetchData()  {
-        Axios.get(`/api/crypto?api_key=${process.env.REACT_APP_API_KEY}`).then(response => {
+        Axios.get(`http://localhost:5000/api/crypto?api_key=${process.env.REACT_APP_API_KEY}`).then(response => {
             setDbList(response.data);
             setFetching(false);
             setTimeout(fetchData, 4000); // Change the numeric value for the frequency you want to call the api and update your price value with 
@@ -24,7 +24,7 @@ function Crypto() {
 
     useEffect(() => {
       async function fetchClass()  {
-        Axios.get(`/api/cryptoups?api_key=${process.env.REACT_APP_API_KEY}`).then(response => {
+        Axios.get(`http://localhost:5000/api/cryptoups?api_key=${process.env.REACT_APP_API_KEY}`).then(response => {
           setClassList(response.data.data);
             setFetchingc(false);
             setTimeout(fetchClass, 4000); // Change the numeric value for the frequency you want to call the api and update your price value with 
@@ -118,94 +118,94 @@ function Crypto() {
 </thead>
 <tbody>
 <tr>
-<th scope="row"><img className="d-none d-sm-table-cell" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1.png" alt="bitcoin" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/> Bitcoin</th>
-<td>{dbList.result[0].price}</td>
-<td style={{color: classList[0].class.includes('down') ? 'red' : 'green'}}><span className={( classList[0].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[0].day}</td>
-<td style={{color: classList[1].class.includes('down') ? 'red' : 'green'}}><span className={( classList[1].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[0].week}</td>
-<td className="d-none d-md-table-cell" >{dbList.result[0].marketCap}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[0].volume}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[0].circulatingSupply}</td>
+<th scope="row" className="d-flex"><img className="d-none d-sm-table-cell" src={dbList.result.srcArr[0].src} alt="bitcoin" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>{dbList.result.coinArr[0].name}</th>
+<td>{dbList.result.coinArr[0].price}</td>
+<td style={{color: classList[0].class.includes('down') ? 'red' : 'green'}}><span className={( classList[0].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[0].day}</td>
+<td style={{color: classList[1].class.includes('down') ? 'red' : 'green'}}><span className={( classList[1].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[0].week}</td>
+<td className="d-none d-md-table-cell" >{dbList.result.coinArr[0].marketCap}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[0].volume}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[0].circulatingSupply}</td>
 </tr>
 <tr>
-<th scope="row"><img className="d-none d-sm-table-cell" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png" alt="ethereum" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>Etheruem</th>
-<td>{dbList.result[1].price}</td>
-<td style={{color: classList[2].class.includes('down') ? 'red' : 'green'}}><span className={( classList[2].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[1].day}</td>
-<td style={{color: classList[3].class.includes('down') ? 'red' : 'green'}}><span className={( classList[3].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[1].week}</td>
-<td className="d-none d-md-table-cell" >{dbList.result[1].marketCap}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[1].volume}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[1].circulatingSupply}</td>
+<th scope="row" className="d-flex"><img className="d-none d-sm-table-cell" src={dbList.result.srcArr[1].src} alt="ethereum" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>{dbList.result.coinArr[1].name}</th>
+<td>{dbList.result.coinArr[1].price}</td>
+<td style={{color: classList[2].class.includes('down') ? 'red' : 'green'}}><span className={( classList[2].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[1].day}</td>
+<td style={{color: classList[3].class.includes('down') ? 'red' : 'green'}}><span className={( classList[3].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[1].week}</td>
+<td className="d-none d-md-table-cell" >{dbList.result.coinArr[1].marketCap}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[1].volume}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[1].circulatingSupply}</td>
 </tr>
 <tr>
-<th scope="row"><img className="d-none d-sm-table-cell" src="https://s2.coinmarketcap.com/static/img/coins/64x64/852.png" alt="tether" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/> Tether</th>
-<td>{dbList.result[2].price}</td>
-<td style={{color: classList[4].class.includes('down') ? 'red' : 'green'}}><span className={( classList[4].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[2].day}</td>
-<td style={{color: classList[5].class.includes('down') ? 'red' : 'green'}}><span className={( classList[5].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[2].week}</td>
-<td className="d-none d-md-table-cell" >{dbList.result[2].marketCap}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[2].volume}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[2].circulatingSupply}</td>
+<th scope="row" className="d-flex"><img className="d-none d-sm-table-cell" src={dbList.result.srcArr[2].src} alt="cardano" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>{dbList.result.coinArr[2].name}</th>
+<td>{dbList.result.coinArr[2].price}</td>
+<td style={{color: classList[4].class.includes('down') ? 'red' : 'green'}}><span className={( classList[4].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[2].day}</td>
+<td style={{color: classList[5].class.includes('down') ? 'red' : 'green'}}><span className={( classList[5].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[2].week}</td>
+<td className="d-none d-md-table-cell" >{dbList.result.coinArr[2].marketCap}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[2].volume}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[2].circulatingSupply}</td>
 </tr>
 <tr>
-<th scope="row"><img className="d-none d-sm-table-cell" src="https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png" alt="binance" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>Binance</th>
-<td>{dbList.result[3].price}</td>
-<td style={{color: classList[6].class.includes('down') ? 'red' : 'green'}}><span className={( classList[6].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[3].day}</td>
-<td style={{color: classList[7].class.includes('down') ? 'red' : 'green'}}><span className={( classList[7].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[3].week}</td>
-<td className="d-none d-md-table-cell" >{dbList.result[3].marketCap}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[3].volume}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[3].circulatingSupply}</td>
+<th scope="row" className="d-flex"><img className="d-none d-sm-table-cell" src={dbList.result.srcArr[3].src} alt="binance" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>{dbList.result.coinArr[3].name}</th>
+<td>{dbList.result.coinArr[3].price}</td>
+<td style={{color: classList[6].class.includes('down') ? 'red' : 'green'}}><span className={( classList[6].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[3].day}</td>
+<td style={{color: classList[7].class.includes('down') ? 'red' : 'green'}}><span className={( classList[7].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[3].week}</td>
+<td className="d-none d-md-table-cell" >{dbList.result.coinArr[3].marketCap}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[3].volume}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[3].circulatingSupply}</td>
 </tr>
 <tr>
-<th scope="row"><img className="d-none d-sm-table-cell" src="https://s2.coinmarketcap.com/static/img/coins/64x64/2010.png" alt="cardano" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>Cardano</th>
-<td>{dbList.result[4].price}</td>
-<td style={{color: classList[8].class.includes('down')? 'red' : 'green'}}><span className={( classList[8].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[4].day}</td>
-<td style={{color: classList[9].class.includes('down') ? 'red' : 'green'}}><span className={( classList[9].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[4].week}</td>
-<td className="d-none d-md-table-cell" >{dbList.result[4].marketCap}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[4].volume}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[4].circulatingSupply}</td>
+<th scope="row" className="d-flex"><img className="d-none d-sm-table-cell" src={dbList.result.srcArr[4].src} alt="tether" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>{dbList.result.coinArr[4].name}</th>
+<td>{dbList.result.coinArr[4].price}</td>
+<td style={{color: classList[8].class.includes('down')? 'red' : 'green'}}><span className={( classList[8].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[4].day}</td>
+<td style={{color: classList[9].class.includes('down') ? 'red' : 'green'}}><span className={( classList[9].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[4].week}</td>
+<td className="d-none d-md-table-cell" >{dbList.result.coinArr[4].marketCap}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[4].volume}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[4].circulatingSupply}</td>
 </tr>
 <tr>
-<th scope="row"><img className="d-none d-sm-table-cell" src="https://s2.coinmarketcap.com/static/img/coins/64x64/52.png" alt="xrp" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>XRP</th>
-<td>{dbList.result[5].price}</td>
-<td style={{color: classList[10].class.includes('down') ? 'red' : 'green'}}><span className={( classList[10].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[5].day}</td>
-<td style={{color: classList[11].class.includes('down') ? 'red' : 'green'}}><span className={( classList[11].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[5].week}</td>
-<td className="d-none d-md-table-cell" >{dbList.result[5].marketCap}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[5].volume}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[5].circulatingSupply}</td>
+<th scope="row" className="d-flex"><img className="d-none d-sm-table-cell" src={dbList.result.srcArr[5].src} alt="solana" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>{dbList.result.coinArr[5].name}</th>
+<td>{dbList.result.coinArr[5].price}</td>
+<td style={{color: classList[10].class.includes('down') ? 'red' : 'green'}}><span className={( classList[10].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[5].day}</td>
+<td style={{color: classList[11].class.includes('down') ? 'red' : 'green'}}><span className={( classList[11].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[5].week}</td>
+<td className="d-none d-md-table-cell" >{dbList.result.coinArr[5].marketCap}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[5].volume}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[5].circulatingSupply}</td>
 </tr>
 <tr>
-<th scope="row"><img className="d-none d-sm-table-cell" src="https://s2.coinmarketcap.com/static/img/coins/64x64/74.png" alt="dodgecoin" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>Dodgecoin</th>
-<td>{dbList.result[6].price}</td>
-<td style={{color: classList[12].class.includes('down') ? 'red' : 'green'}}><span className={( classList[12].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[6].day}</td>
-<td style={{color: classList[13].class.includes('down') ? 'red' : 'green'}}><span className={( classList[13].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[6].week}</td>
-<td className="d-none d-md-table-cell" >{dbList.result[6].marketCap}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[6].volume}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[6].circulatingSupply}</td>
+<th scope="row" className="d-flex"><img className="d-none d-sm-table-cell" src={dbList.result.srcArr[6].src} alt="xrp" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>{dbList.result.coinArr[6].name}</th>
+<td>{dbList.result.coinArr[6].price}</td>
+<td style={{color: classList[12].class.includes('down') ? 'red' : 'green'}}><span className={( classList[12].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[6].day}</td>
+<td style={{color: classList[13].class.includes('down') ? 'red' : 'green'}}><span className={( classList[13].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[6].week}</td>
+<td className="d-none d-md-table-cell" >{dbList.result.coinArr[6].marketCap}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[6].volume}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[6].circulatingSupply}</td>
 </tr>
 <tr>
-<th scope="row"><img className="d-none d-sm-table-cell" src="https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png" alt="usd" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>USD Coin</th>
-<td>{dbList.result[7].price}</td>
-<td style={{color: classList[14].class.includes('down') ? 'red' : 'green'}}><span className={( classList[14].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[7].day}</td>
-<td style={{color: classList[15].class.includes('down') ? 'red' : 'green'}}><span className={( classList[15].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[7].week}</td>
-<td className="d-none d-md-table-cell" >{dbList.result[7].marketCap}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[7].volume}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[7].circulatingSupply}</td>
+<th scope="row" className="d-flex"><img className="d-none d-sm-table-cell" src={dbList.result.srcArr[7].src} alt="dodgecoin" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>{dbList.result.coinArr[7].name}</th>
+<td>{dbList.result.coinArr[7].price}</td>
+<td style={{color: classList[14].class.includes('down') ? 'red' : 'green'}}><span className={( classList[14].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[7].day}</td>
+<td style={{color: classList[15].class.includes('down') ? 'red' : 'green'}}><span className={( classList[15].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[7].week}</td>
+<td className="d-none d-md-table-cell" >{dbList.result.coinArr[7].marketCap}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[7].volume}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[7].circulatingSupply}</td>
 </tr>
 <tr>
-<th scope="row"><img className="d-none d-sm-table-cell" src="https://s2.coinmarketcap.com/static/img/coins/64x64/6636.png" alt="polkadot" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>Polkadot</th>
-<td>{dbList.result[8].price}</td>
-<td style={{color: classList[16].class.includes('down') ? 'red' : 'green'}}><span className={( classList[16].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[8].day}</td>
-<td style={{color: classList[17].class.includes('down') ? 'red' : 'green'}}><span className={( classList[17].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[8].week}</td>
-<td className="d-none d-md-table-cell" >{dbList.result[8].marketCap}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[8].volume}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[8].circulatingSupply}</td>
+<th scope="row" className="d-flex"><img className="d-none d-sm-table-cell" src={dbList.result.srcArr[8].src} alt="polkadot" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>{dbList.result.coinArr[8].name}</th>
+<td>{dbList.result.coinArr[8].price}</td>
+<td style={{color: classList[16].class.includes('down') ? 'red' : 'green'}}><span className={( classList[16].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[8].day}</td>
+<td style={{color: classList[17].class.includes('down') ? 'red' : 'green'}}><span className={( classList[17].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[8].week}</td>
+<td className="d-none d-md-table-cell" >{dbList.result.coinArr[8].marketCap}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[8].volume}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[8].circulatingSupply}</td>
 </tr>
 <tr>
-<th scope="row"><img className="d-none d-sm-table-cell" src="https://s2.coinmarketcap.com/static/img/coins/64x64/7083.png" alt="uniswap" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>Uniswap</th>
-<td>{dbList.result[9].price}</td>
-<td style={{color: classList[18].class.includes('down') ? 'red' : 'green'}}><span className={( classList[18].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[9].day}</td>
-<td style={{color: classList[19].class.includes('down') ? 'red' : 'green'}}><span className={( classList[19].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result[9].week}</td>
-<td className="d-none d-md-table-cell" >{dbList.result[9].marketCap}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[9].volume}</td>
-<td className="d-none d-lg-table-cell" >{dbList.result[9].circulatingSupply}</td>
+<th scope="row" className="d-flex"><img className="d-none d-sm-table-cell" src={dbList.result.srcArr[9].src} alt="usd" style={{height:'18px',width:'18px',borderRadius: '12px',marginBottom: '4px',marginRight: '5px'}}/>{dbList.result.coinArr[9].name}</th>
+<td>{dbList.result.coinArr[9].price}</td>
+<td style={{color: classList[18].class.includes('down') ? 'red' : 'green'}}><span className={( classList[18].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[9].day}</td>
+<td style={{color: classList[19].class.includes('down') ? 'red' : 'green'}}><span className={( classList[19].class.includes('down') ? 'arrow-down' : 'arrow-up')}></span>{dbList.result.coinArr[9].week}</td>
+<td className="d-none d-md-table-cell" >{dbList.result.coinArr[9].marketCap}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[9].volume}</td>
+<td className="d-none d-lg-table-cell" >{dbList.result.coinArr[9].circulatingSupply}</td>
 </tr>
 </tbody>
 </table>
